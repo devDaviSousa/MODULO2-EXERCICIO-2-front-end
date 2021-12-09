@@ -1,23 +1,27 @@
+import { Container } from "./styles"
 
 export function List(props) {
 
   return (
-    <div>
+    <Container>
       <ul>
         {
           props.livros.map((item) => {
             return (
-              <li>
+              <li key={item.url}>
                 <h2>{item.author}</h2>
                 <p>{item.title}</p>
-                <a href={item.url} >Ler</a>
+
+                <button>
+                  <a href={item.url} >Ler</a>
+                </button>
               </li>
             )
           })
         }
       </ul>
 
-    </div >
+    </Container >
   )
 
 }

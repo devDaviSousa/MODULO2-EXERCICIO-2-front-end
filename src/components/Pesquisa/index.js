@@ -1,14 +1,15 @@
+import { Container } from "./styles";
 
 export function Pesquisa() {
 
   return (
-    <div>
+    <Container>
       <form>
-        <input placeholder="pesquisar"></input>
+        <input ></input>
         <button type="button">ir</button>
       </form>
 
-    </div>
+    </Container>
 
 
   )

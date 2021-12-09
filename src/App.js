@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
+import { GlobalStyle } from "./styles/global";
 
 import { Header } from "./components/Header";
 import { List } from "./components/List";
@@ -18,18 +19,13 @@ function App() {
   }, [])
   return (
 
-    <div>
-
-      <Header title="Davi sousa"></Header>
+    <>
+      <Header title="Modulo 2 - Exercico 2"></Header>
       <Pesquisa>
       </Pesquisa>
-
       <List livros={livros}></List>
-
-
-
-    </div>
-
+      <GlobalStyle />
+    </>
 
   )
 }

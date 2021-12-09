@@ -1,6 +1,10 @@
+import { Container } from "./styles";
 
 export function Header(props) {
   return (
-    <h1>{props.title}</h1>
+    <Container>
+      <h1>{props.title}</h1>
+
+    </Container>
   )
 }
