@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useEffect, useState } from "react"
+
+import { Header } from "./components/Header";
+import { List } from "./components/List";
+import { Pesquisa } from "./components/Pesquisa";
 
 function App() {
+  const [livros, setLivros] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://hn.algolia.com/api/v1/search?query=chave')
+      .then(response => {
+        const data = response.data.hits
+        setLivros(data);
+
+      })
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+
+      <Header title="Davi sousa"></Header>
+      <Pesquisa>
+      </Pesquisa>
+
+      <List livros={livros}></List>
+
+
+
     </div>
-  );
+
+
+  )
 }
 
 export default App;
