@@ -3,11 +3,11 @@ export function ItemList(props) {
 
   return (
     <li>
-      <h2>{props.livro.author}</h2>
-      <p>{props.livro.title}</p>
+      <h2>{props.leitura.author}</h2>
+      <p>{props.leitura.title}</p>
 
       <button>
-        <a href={props.livro.url} >Ler</a>
+        <a href={props.leitura.url} >Ler</a>
       </button>
     </li>
   )

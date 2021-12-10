@@ -12,6 +12,7 @@ form{
     height: 2.5rem;
     border-radius: 0.3rem;
     border:none;
+        
   }
 
   button{

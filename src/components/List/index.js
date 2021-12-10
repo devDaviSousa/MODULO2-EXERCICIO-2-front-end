@@ -8,9 +8,9 @@ export function List(props) {
     <Container>
       <ul>
         {
-          props.livros.map((livro) => {
+          props.leitura.map((leitura, id) => {
             return (
-              <ItemList key={livro.id} livro={livro} />
+              <ItemList key={id} leitura={leitura} />
             )
           })
         }

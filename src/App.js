@@ -9,7 +9,7 @@ import { api } from "./services/api";
 
 function App() {
 
-  const [livros, setLivros] = useState([]);
+  const [leitura, setLeitura] = useState([]);
   const [pesquisa, setPesquisa] = useState('');
   const [chave, setChave] = useState('')
 
@@ -17,7 +17,7 @@ function App() {
     api.get(`${chave}`)
       .then(response => {
         const data = response.data.hits
-        setLivros(data);
+        setLeitura(data);
       })
   }, [chave])
 
@@ -39,7 +39,7 @@ function App() {
         onButtnChange={handleButton}
       >
       </Pesquisa>
-      <List livros={livros} ></List>
+      <List leitura={leitura} ></List>
       <GlobalStyle />
     </>
   )
