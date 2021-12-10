@@ -10,27 +10,30 @@ import { api } from "./services/api";
 function App() {
   const [livros, setLivros] = useState([]);
   const [pesquisa, setPesquisa] = useState('');
+  const [chave, setChave] = useState('')
 
   const handleSearch = event => {
     setPesquisa(event.target.value);
   }
 
-  const teste = useEffect(() => {
-    api.get('')
+  useEffect(() => {
+    api.get(`${chave}`)
       .then(response => {
         const data = response.data.hits
         setLivros(data);
       })
-  }, [pesquisa])
-
+  }, [chave])
 
   return (
-
     <>
       <Header title={process.env.REACT_APP_NAME}></Header>
       <Pesquisa value={pesquisa}
         onInputChange={handleSearch}
-        onButtnChange={() => teste}
+        onButtnChange={() => {
+          return (
+            setChave(pesquisa)
+          )
+        }}
 
       ></Pesquisa>
       <List livros={livros} ></List>

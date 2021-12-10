@@ -10,7 +10,7 @@ export function List(props) {
         {
           props.livros.map((livro) => {
             return (
-              <ItemList key={livro.name} livro={livro} />
+              <ItemList key={livro.id} livro={livro} />
             )
           })
         }
