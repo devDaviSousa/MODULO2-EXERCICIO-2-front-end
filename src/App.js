@@ -8,13 +8,10 @@ import { Pesquisa } from "./components/Pesquisa";
 import { api } from "./services/api";
 
 function App() {
+
   const [livros, setLivros] = useState([]);
   const [pesquisa, setPesquisa] = useState('');
   const [chave, setChave] = useState('')
-
-  const handleSearch = event => {
-    setPesquisa(event.target.value);
-  }
 
   useEffect(() => {
     api.get(`${chave}`)
@@ -24,18 +21,24 @@ function App() {
       })
   }, [chave])
 
+  const handleSearch = event => {
+    setPesquisa(event.target.value);
+  }
+
+  const handleButton = () => {
+    return (
+      setChave(pesquisa)
+    )
+  }
+
   return (
     <>
       <Header title={process.env.REACT_APP_NAME}></Header>
       <Pesquisa value={pesquisa}
         onInputChange={handleSearch}
-        onButtnChange={() => {
-          return (
-            setChave(pesquisa)
-          )
-        }}
-
-      ></Pesquisa>
+        onButtnChange={handleButton}
+      >
+      </Pesquisa>
       <List livros={livros} ></List>
       <GlobalStyle />
     </>
