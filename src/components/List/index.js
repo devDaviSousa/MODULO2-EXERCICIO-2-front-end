@@ -1,3 +1,5 @@
+import { ItemList } from "../ItemList";
+
 import { Container } from "./styles"
 
 export function List(props) {
@@ -6,21 +8,13 @@ export function List(props) {
     <Container>
       <ul>
         {
-          props.livros.map((item) => {
+          props.livros.map((livro) => {
             return (
-              <li key={item.url}>
-                <h2>{item.author}</h2>
-                <p>{item.title}</p>
-
-                <button>
-                  <a href={item.url} >Ler</a>
-                </button>
-              </li>
+              <ItemList key={livro.name} livro={livro} />
             )
           })
         }
       </ul>
-
     </Container >
   )
 

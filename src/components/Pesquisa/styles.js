@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
-
-
 export const Container = styled.div`
-
-
 
 form{
   text-align: center;
   margin-top: -5.5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 
   input{
     width: 28rem;
@@ -26,12 +22,9 @@ form{
     border:none;
     background: var(--green);
     color: white;
-
+    
   }
 
-
 }
-
-
 
 `

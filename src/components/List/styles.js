@@ -1,16 +1,17 @@
 import styled from "styled-components"
 
 
-
-
-
 export const Container = styled.div`
 
-width: 70%;
+max-width: 1020px;
 margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
 
 ul{
   list-style: none;
+
   
 }
 
@@ -41,7 +42,7 @@ li{
   a{
     text-decoration: none;
     color:var(--green);
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     
   }
 
